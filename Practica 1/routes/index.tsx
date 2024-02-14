@@ -12,9 +12,9 @@ export default function Home() {
           height="128"
           alt="the Fresh logo: a sliced lemon dripping with juice"
         />
-        <h1 class="text-4xl font-bold">Practica 1 de Front</h1>
+        <h1 class="text-4xl font-bold">Práctica 1 de Front</h1>
         <p class="my-4">
-          Estos son los endpoints de la practica: 
+          Estos son los endpoints de la práctica: 
         </p>
       </div>
       <div class="center">
