@@ -6,10 +6,10 @@ type results = {
 }
 
 type ship={ 
-    Name:string,
-    Model:string,
-    Manufacturer:string,
-    Cost_in_Credits:string
+    name:string,
+    model:string,
+    manufacturer:string,
+    cost_in_credits:string
 
 }
 
@@ -21,15 +21,9 @@ export const handler:Handlers = {
             let res = await fetch(`https://swapi.dev/api/starships/?page=${page}`)
             res = await res.json()
             if(res.results=="Not found")throw new Error("Page not found")
-            const ships:ship[]=res.results.map(i=> {return {
-                Name:i.name,
-                Model:i.model,
-                Manufacturer:i.manufacturer,
-                Cost_in_Credits:i.cost_in_credits
-            } })
             return ctx.render({
                 page,
-                ships
+                ships:res.results
             })
         }catch(error){
             return ctx.render()
@@ -45,10 +39,10 @@ const Page = (props:PageProps<results>) =>{
         return <div>
             <h1>Pagina {page}</h1>
             {ships.map(i=>{return <br><menu>
-                    <li><b>Name : {`${i.Name}`}</b></li> 
-                    <p>Model : {`${i.Model}`}</p>
-                    <p>Manufacturer : {`${i.Manufacturer}`}</p>
-                    <p>Cost in credits : {`${i.Cost_in_Credits}`}</p>
+                    <li><b>Name : {`${i.name}`}</b></li> 
+                    <p>Model : {`${i.model}`}</p>
+                    <p>Manufacturer : {`${i.manufacturer}`}</p>
+                    <p>Cost in credits : {`${i.cost_in_credits}`}</p>
                     </menu></br>
             })}
             

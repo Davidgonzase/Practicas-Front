@@ -20,16 +20,9 @@ export const handler:Handlers = {
             const name = url.searchParams.get("query") || undefined
             let res = await fetch(`https://swapi.dev/api/people/?search=${name}`)
             res = await res.json()
-            if(res.results.length==0)throw new Error
-            const persons:person[]=res.results.map(i=> {return {
-                name:i.name,
-                height:i.height,
-                mass:i.mass,
-                gender:i.gender,
-                birth_year:i.birth_year
-            } })    
+            if(res.results.length==0)throw new Error   
             return ctx.render({
-                persons
+                persons:res.results
             })
         }catch(error){
             return ctx.render()
