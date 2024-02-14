@@ -39,17 +39,15 @@ export const handler:Handlers = {
 const Page = (props:PageProps<results>) =>{
     try {
         const {persons} = props.data;
-        return <div class="center">
+        return <div >
             <h1>Personas encontradas :</h1>
-            {persons.map(i=>{return <br>
-            <div>
-                <li><b>Name : </b>{`${i.name}`}</li> 
-                <li><b>height : </b>{`${i.height}`}</li>
-                <li><b>mass : </b>{`${i.mass}`}</li>
-                <li><b>gender : </b>{`${i.gender}`}</li>
-                <li><b>birth_year : </b>{`${i.birth_year}`}</li>
-                </div>
-                </br>
+            {persons.map(i=>{return <div> <br><menu>
+                <li><b>Name : {`${i.name}`}</b></li> 
+                <p>Height : {`${i.height}`}</p>
+                <p>Mass : {`${i.mass}`}</p>
+                <p>Gender : {`${i.gender}`}</p>
+                <p>Birth year : {`${i.birth_year}`}</p>
+                </menu> </br> </div>
             })}
             </div>
     } catch (error) {

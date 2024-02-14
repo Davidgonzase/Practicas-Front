@@ -42,29 +42,24 @@ const Page = (props:PageProps<results>) =>{
         const atras=`/startships?page=${Number(page)-1}`
         const delante=`/startships?page=${Number(page)+1}`
 
-        return <div class="center">
+        return <div>
             <h1>Pagina {page}</h1>
-            {ships.map(i=>{return <br>
-            <div>
-                <li><b>Name : </b>{`${i.Name}`}</li> 
-                <li><b>Model : </b>{`${i.Model}`}</li>
-                <li><b>Manufacturer : </b>{`${i.Manufacturer}`}</li>
-                <li><b>Cost in credits : </b>{`${i.Cost_in_Credits}`}</li>
-                </div>
-                </br>
+            {ships.map(i=>{return <br><menu>
+                    <li><b>Name : {`${i.Name}`}</b></li> 
+                    <p>Model : {`${i.Model}`}</p>
+                    <p>Manufacturer : {`${i.Manufacturer}`}</p>
+                    <p>Cost in credits : {`${i.Cost_in_Credits}`}</p>
+                    </menu></br>
             })}
             
-            <br></br>
-            <div>
-            <a href={atras}>
-                <button>Atras</button>
-            </a> 
-            
-            <form target="/startships" method="get"><input type="text" id="fname" name="page" ></input></form>
-
-            <a href={delante}>
-                <button>Delante</button>
-            </a> 
+            <div class = "center">
+                <form target="/startships" method="get"><input type="text" id="fname" name="page" ></input></form>
+                <a href={atras} class="center">
+                    <button>Atras</button>
+                </a> 
+                <a href={delante} class="center">
+                    <button>Delante</button>
+                </a> 
             </div>
         </div>   
     } catch (error) {
