@@ -6,10 +6,10 @@ type results = {
 }
 
 type ship={ 
-    Name:string,
-    Model:string,
-    Manufacturer:string,
-    Cost_in_Credits:string
+    name:string,
+    model:string,
+    manufacturer:string,
+    cost_in_credits:string
 
 }
 
@@ -21,15 +21,9 @@ export const handler:Handlers = {
             let res = await fetch(`https://swapi.dev/api/starships/?page=${page}`)
             res = await res.json()
             if(res.results=="Not found")throw new Error("Page not found")
-            const ships:ship[]=res.results.map(i=> {return {
-                Name:i.name,
-                Model:i.model,
-                Manufacturer:i.manufacturer,
-                Cost_in_Credits:i.cost_in_credits
-            } })
             return ctx.render({
                 page,
-                ships
+                ships:res.results
             })
         }catch(error){
             return ctx.render()
@@ -42,29 +36,24 @@ const Page = (props:PageProps<results>) =>{
         const atras=`/startships?page=${Number(page)-1}`
         const delante=`/startships?page=${Number(page)+1}`
 
-        return <div class="center">
+        return <div>
             <h1>Pagina {page}</h1>
-            {ships.map(i=>{return <br>
-            <div>
-                <li><b>Name : </b>{`${i.Name}`}</li> 
-                <li><b>Model : </b>{`${i.Model}`}</li>
-                <li><b>Manufacturer : </b>{`${i.Manufacturer}`}</li>
-                <li><b>Cost in credits : </b>{`${i.Cost_in_Credits}`}</li>
-                </div>
-                </br>
+            {ships.map(i=>{return <br><menu>
+                    <li><b>Name : {`${i.name}`}</b></li> 
+                    <p>Model : {`${i.model}`}</p>
+                    <p>Manufacturer : {`${i.manufacturer}`}</p>
+                    <p>Cost in credits : {`${i.cost_in_credits}`}</p>
+                    </menu></br>
             })}
             
-            <br></br>
-            <div>
-            <a href={atras}>
-                <button>Atras</button>
-            </a> 
-            
-            <form target="/startships" method="get"><input type="text" id="fname" name="page" ></input></form>
-
-            <a href={delante}>
-                <button>Delante</button>
-            </a> 
+            <div class = "center">
+                <form target="/startships" method="get"><input type="text" id="fname" name="page" ></input></form>
+                <a href={atras} class="center">
+                    <button>Atras</button>
+                </a> 
+                <a href={delante} class="center">
+                    <button>Delante</button>
+                </a> 
             </div>
         </div>   
     } catch (error) {
