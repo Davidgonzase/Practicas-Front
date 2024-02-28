@@ -52,15 +52,14 @@ const Page = (props:PageProps<result>) =>{
     }
     return(
         <div class="flexcity">
-            <div>
-                <form>
-                    Ciudad: <input type="text" name="city" /> <text> </text>
-                    <button type="submit" class="bcity"> Buscar </button>
-                </form>
-            </div>
+            <form class="searcher">
+                Ciudad <input type="text" name="city" /> <text> </text>
+                <button type="submit" class="bs"> Buscar </button>
+            </form>
+
             {props.data.city && <div><City name={props.data.city.name} population={props.data.city.population} 
             longitude={props.data.city.longitude} latitude={props.data.city.latitude} 
-            is_capital={props.data.city.is_capital} country={props.data.city.country} /></div>}
+            is_capital={props.data.city.is_capital} country={props.data.city.country}/></div>}
         </div>
     );
 }
