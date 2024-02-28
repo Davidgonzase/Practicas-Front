@@ -1,7 +1,6 @@
 import { FreshContext, Handlers, PageProps } from "$fresh/server.ts";
 import { load } from "https://deno.land/std@0.204.0/dotenv/mod.ts";
-import City from "../../components/City.tsx";
-import Dog from "../../components/dog.tsx";
+import Dog from "../../components/Dog.tsx";
 
 type result={
     dog?:dog

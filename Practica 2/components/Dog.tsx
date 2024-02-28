@@ -12,7 +12,7 @@ type Dogprops = {
     image_link:string
 };
 
-const User: FunctionComponent<Dogprops> = (props) : JSX.Element  => {
+const Dog: FunctionComponent<Dogprops> = (props) : JSX.Element  => {
     const {name,max_height_female,max_height_male,max_weight_male,max_weight_female,good_with_strangers,good_with_children,good_with_other_dogs,image_link} = props;
     return (
         <>
@@ -37,4 +37,4 @@ const User: FunctionComponent<Dogprops> = (props) : JSX.Element  => {
     )
 };
 
-export default User;
+export default Dog;
