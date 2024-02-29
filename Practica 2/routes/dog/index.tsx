@@ -60,11 +60,11 @@ const Page = (props:PageProps<result>) =>{
                     Raza<input type="text" name="dog" /> <text> </text>
                     <button type="submit" class="bs"> Buscar </button>
              </form>
-            {props.data.dog && <div><Dog name={props.data.dog.name} max_height_male={props.data.dog.max_height_male} 
+            {props.data.dog && <Dog name={props.data.dog.name} max_height_male={props.data.dog.max_height_male} 
                 max_height_female={props.data.dog.max_height_female} max_weight_female={props.data.dog.max_weight_female} 
                 max_weight_male={props.data.dog.max_weight_male} good_with_children={props.data.dog.good_with_children} 
                 good_with_other_dogs={props.data.dog.good_with_other_dogs} good_with_strangers={props.data.dog.good_with_strangers}
-                image_link={props.data.dog.image_link}/></div> }
+                image_link={props.data.dog.image_link}/> }
         </div>
     );
 }
