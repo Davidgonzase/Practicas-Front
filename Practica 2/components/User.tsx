@@ -18,7 +18,7 @@ const User: FunctionComponent<Userprops> = (props) : JSX.Element  => {
             </div>
             <div class="blackdivunder">
                 <div class="row"> <img src="/email.png" width="30" height="20"></img><span>{email}</span> </div>
-                <div class="row"> <img src="/sex.png" width="20" height="20"></img><span>{sex}</span> </div>
+                <div class="row"> <img src="/sex.png" width="20" height="20"></img><span>{sex=="M" ? "Male" : "Female"}</span> </div>
                 <div class="row"> <img src="/address.png" width="20" height="20"></img><span>{address}</span> </div>
             </div>
         </div>
