@@ -22,14 +22,14 @@ const Dog: FunctionComponent<Dogprops> = (props) : JSX.Element  => {
             </div>
             <div class="rowdow">
                 <menu>
-                    <li>{name}</li>
-                    <li>{max_height_male}</li>
-                    <li>{max_height_female}</li>
-                    <li>{max_weight_male}</li>
-                    <li>{max_weight_female}</li>
-                    <li>{good_with_strangers}</li>
-                    <li>{good_with_children}</li>
-                    <li>{good_with_other_dogs}</li>
+                    <li><b>Nombre: </b>{name}</li>
+                    <li><b>Altura máxima(m): </b>{max_height_male}</li>
+                    <li><b>Altura máxima(f): </b>{max_height_female}</li>
+                    <li><b>Peso máximo(m): </b>{max_weight_male}</li>
+                    <li><b>Peso máximo(f): </b>{max_weight_female}</li>
+                    <li><b>Bueno con extraños: </b>{good_with_strangers}</li>
+                    <li><b>Bueno con niños: </b>{good_with_children}</li>
+                    <li><b>Bueno con otros perros: </b>{good_with_other_dogs}</li>
                 </menu>
             </div>
         </div>

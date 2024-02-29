@@ -8,7 +8,7 @@ export default function App({ Component }: PageProps) {
         <title>Practica 2</title>
         <link rel="stylesheet" href="/styles.css" />
       </head>
-      <body style="background-color:black;color:white;font-family: Comic Sans MS,Comic Sans, cursive;">
+      <body style="background-color:black;color:white;font-family: Comic Sans MS,Comic Sans, cursive;font-size=100px;">
         <Component />
       </body>
     </html>

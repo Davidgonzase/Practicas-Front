@@ -172,6 +172,7 @@ html {
 }
 
 .flexcity{
+  font-size:20px;
   display: flex;
   flex-direction: row;
   width: 100vw;
@@ -191,6 +192,7 @@ html {
 }
 
 .flexdog{
+  font-size:25px;
   padding: 5px;
   display: flex;
   flex-direction: column;
