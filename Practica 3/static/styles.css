@@ -127,3 +127,93 @@ html {
 .tabular-nums {
   font-variant-numeric: tabular-nums;
 }
+.all {
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  background-color:#f4f2ee;
+  flex-direction: column;
+}
+.centerdiv{
+  display:flex;
+  height: 100%;
+  width: 75%;
+  background-color:white
+}
+.izq {
+  display:flex;
+  flex-direction: column;
+  height: 100%;
+  width: 45%;
+}
+.der{
+  display:flex;
+  height: 100%;
+  width: 55%;
+  overflow: auto;
+  flex-direction: column;
+  background-color:white;
+  padding: 1%;
+  border-radius: 5px;
+  font-family: 'Source Serif Pro Regular';
+}
+
+.list{
+  display:flex;
+  display:flex;
+  overflow: auto;
+  flex-direction: column;
+  background-color:white
+}
+
+.topizq{
+  background-color: #0a66c2;
+  color: white;
+  padding: 5px;
+  height:60px;
+  font-family: Georgia,Times,Times New Roman,serif; 
+}
+
+.topizq h1{
+  font-size: 16px;
+}
+
+.topizq h2{
+  font-size: 12px;
+}
+
+.jobdiv{
+  display: flex;
+  flex-direction: column;
+  padding: 1px;
+}
+.buttonjob{
+  display: flex;
+  height: 100px;
+  width: 100%;
+  background-color: white;
+  border: none;
+}
+.line{
+  height: 1px;
+  width: 100%;
+  background-color: black;
+}
+
+.desc {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+}
+
+.desc h1{
+  font-size: 18px;
+}
+.desc h2{
+  font-size: 15px;
+}
+.desc h3{
+  font-size: 13px;
+}
