@@ -1,6 +1,7 @@
 import { useState, useEffect } from "preact/hooks";
 import { FunctionComponent } from "preact";
 import {results} from "../types.ts"
+import Jobdiv from "../components/Button.tsx";
 
 type Jobprops = {
   results:results
@@ -10,9 +11,6 @@ const a="<p>asdasd<p>"
 
 export  const Job: FunctionComponent<Jobprops> = (props)  => {
   const {results} = props
-  // const [data, setData] = useState<results>({
-  //   data:props.
-  // })
   const [selected, setSelected] = useState<number>(0)
   return (
     <div class="all">
@@ -23,8 +21,7 @@ export  const Job: FunctionComponent<Jobprops> = (props)  => {
               <text><h2>{results.data.length} Resultados</h2></text>
           </div>
           <div class="list">
-            {results && results.data.map(
-              (value, index) =>  <div class="jobdiv"><button class="buttonjob" onClick={(e) => {setSelected(index)}}>{value.title}</button><div class="line"/></div>)}
+            {results && results.data.map((value, index) => <Jobdiv index={index} title={value.title} company={value.company_name} place={value.location} setSelected={() => setSelected(index)}/> )}
           </div>
         </div>
         <div class="der">
@@ -37,11 +34,3 @@ export  const Job: FunctionComponent<Jobprops> = (props)  => {
 };
 
 export default Job;
-
-
-// results.data.map(
-//   (value, index) => {{console.log(value)}<div onClick={(e) => {setSelected(index)}}>
-//   {value.company_name}</div>
-// })
-
-{/* <div><button onClick={(e) => {setSelected(index)}}>{value.title}</button></div> */}

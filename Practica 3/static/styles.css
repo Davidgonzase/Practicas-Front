@@ -31,9 +31,7 @@ video {
 html {
   line-height: 1.5;
   -webkit-text-size-adjust: 100%;
-  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
-    "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
-    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-family: -apple-system, system-ui, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Fira Sans, Ubuntu, Oxygen, Oxygen Sans, Cantarell, Droid Sans, Apple Color Emoji, Segoe UI Emoji, Segoe UI Emoji, Segoe UI Symbol, Lucida Grande, Helvetica, Arial, sans-serif;
 }
 .transition-colors {
   transition-property: background-color, border-color, color, fill, stroke;
@@ -135,11 +133,12 @@ html {
   width: 100vw;
   background-color:#f4f2ee;
   flex-direction: column;
+  
 }
 .centerdiv{
   display:flex;
   height: 100%;
-  width: 75%;
+  width: 1150px;
   background-color:white
 }
 .izq {
@@ -157,11 +156,9 @@ html {
   background-color:white;
   padding: 1%;
   border-radius: 5px;
-  font-family: 'Source Serif Pro Regular';
 }
 
 .list{
-  display:flex;
   display:flex;
   overflow: auto;
   flex-direction: column;
@@ -173,7 +170,6 @@ html {
   color: white;
   padding: 5px;
   height:60px;
-  font-family: Georgia,Times,Times New Roman,serif; 
 }
 
 .topizq h1{
@@ -186,15 +182,15 @@ html {
 
 .jobdiv{
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   padding: 1px;
 }
-.buttonjob{
+.job{
   display: flex;
-  height: 100px;
+  height: 100000000px;
   width: 100%;
   background-color: white;
-  border: none;
+  flex-direction: column;
 }
 .line{
   height: 1px;
@@ -208,12 +204,64 @@ html {
   padding: 0;
 }
 
-.desc h1{
-  font-size: 18px;
+.desc_pressed {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  background-color: #edf3f8;
 }
-.desc h2{
+
+.imagelin {
+  border-radius: 15px;
+}
+
+.imagediv {
+  width: 14%;
+  margin: 1%;
+}
+
+.textdiv {
+  margin: 10px;
+  width: 80%;
+}
+
+.textdiv h1{
   font-size: 15px;
 }
-.desc h3{
+
+.textdiv h2{
   font-size: 13px;
+}
+
+.textdiv h3{
+  font-size: 11px;
+}
+
+.buttondesc {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: transparent;
+  border-color: transparent;
+}
+
+.buttondesc:hover{
+  border-radius: 50%;
+  background-color: #ebebeb;
+}
+
+.textdiv h1{
+  font-size: 16px;
+  color:#0a66c2;
+  font-weight: 620;
+}
+.textdiv h2{
+  font-size: 15px;
+  color:black;
+  font-weight: 200;
+}
+.textdiv h3{
+  font-size: 15px;
+  color:#898989;
+  font-weight: 100;
 }

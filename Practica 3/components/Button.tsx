@@ -1,12 +1,40 @@
-import { JSX } from "preact";
-import { IS_BROWSER } from "$fresh/runtime.ts";
+import { useState, useEffect } from "preact/hooks";
+import { FunctionComponent } from "preact";
 
-export function Button(props: JSX.HTMLAttributes<HTMLButtonElement>) {
+type JobdivProps = {
+  index: number;
+  title: string;
+  company: string;
+  place: string;
+  setSelected: (value: number) => void; // Cambié el tipo para que coincida con la función que acepta solo un número
+};
+
+export const Jobdiv: FunctionComponent<JobdivProps> = (props) => {
+  const { index, title, company, place, setSelected } = props;
   return (
-    <button
-      {...props}
-      disabled={!IS_BROWSER || props.disabled}
-      class="px-2 py-1 border-gray-500 border-2 rounded bg-white hover:bg-gray-200 transition-colors"
-    />
+
+  <div>
+    <div class="job">
+    <div class="jobdiv" onClick={() => setSelected(index)}>
+      <div class = "imagediv">
+        <img src="linkedin.png" class="imagelin"/>
+      </div>
+      <div class="textdiv">
+        <h1>{title}</h1>
+        <h2>{company}</h2>
+        <h3>{place}</h3>
+        <br/>
+        
+      </div>
+      <button class="buttondesc">
+        X
+      </button>
+    </div>
+    </div>
+    <div class="line"/>
+  </div>
+    
   );
-}
+};
+
+export default Jobdiv;
