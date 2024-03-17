@@ -21,11 +21,12 @@ export  const Job: FunctionComponent<Jobprops> = (props)  => {
               <text><h2>{results.data.length} Resultados</h2></text>
           </div>
           <div class="list">
-            {results && results.data.map((value, index) => <Jobdiv index={index} title={value.title} company={value.company_name} place={value.location} setSelected={() => setSelected(index)}/> )}
+            {results && results.data.map((value, index) => <Jobdiv index={index} title={value.title} company={value.company_name} slug={value.slug} place={value.location} setSelected={() => setSelected(index)}/> )}
           </div>
         </div>
         <div class="der">
               <h3>Acerca del empleo:</h3><br/>
+              <headerdesc />
               <div class="desc" style={{ marginBottom: '10px' }} dangerouslySetInnerHTML={{ __html: results.data[selected].description }}/>
         </div>
       </div>

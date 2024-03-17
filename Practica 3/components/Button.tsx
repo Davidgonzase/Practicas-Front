@@ -6,18 +6,19 @@ type JobdivProps = {
   title: string;
   company: string;
   place: string;
+  slug: string;
   setSelected: (value: number) => void; // Cambié el tipo para que coincida con la función que acepta solo un número
 };
 
 export const Jobdiv: FunctionComponent<JobdivProps> = (props) => {
-  const { index, title, company, place, setSelected } = props;
+  const { index, title, company, place, setSelected, slug} = props;
   return (
 
-  <div>
+  <div key={slug}>
     <div class="job">
     <div class="jobdiv" onClick={() => setSelected(index)}>
       <div class = "imagediv">
-        <img src="linkedin.png" class="imagelin"/>
+        <img src="linkedin.png"/>
       </div>
       <div class="textdiv">
         <h1>{title}</h1>
