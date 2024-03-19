@@ -43,7 +43,6 @@ html {
   margin-top: 1.5rem;
 }
 .text-4xl {
-  font-size: 2.25rem;
   line-height: 2.5rem;
 }
 .mx-2 {
@@ -154,7 +153,7 @@ html {
   overflow: auto;
   flex-direction: column;
   background-color:white;
-  padding: 1%;
+  padding: 2%;
   border-radius: 5px;
 }
 
@@ -262,4 +261,123 @@ html {
   font-size: 15px;
   color:#898989;
   font-weight: 200;
+}
+
+.butrounded{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border-radius: 50px 50px 50px 50px; 
+  width: auto;
+  height: 50px;
+  padding-right: 20px;
+  background-color: transparent;
+  color: #666666;
+  border-color: #8d8d8d;
+}
+
+.butrounded:hover{
+  border-radius: 50px 50px 50px 50px; 
+  background-color: transparent;
+  color: #666666;
+  border-color: #3b3b3b;
+  background-color: #ebebeb;
+}
+
+.butrounded_blue{
+  border-radius: 50px 50px 50px 50px; 
+  padding: 10px;
+  width: auto;
+  height: 50px;
+  background-color: transparent;
+  color: #0a66c2;
+  border-color: #0a66c2;
+  margin: 20px;
+}
+
+.butrounded_blue:hover{
+  background-color: #e2f0fe;
+}
+
+.butrounded_link{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border-radius: 50px 50px 50px 50px; 
+  padding: 10px;
+  background-color: #0a66c2;
+  color: white;
+  width: auto;
+  height: 50px;
+  border-color: transparent;
+}
+
+.butrounded_link:hover{
+  background-color: #004182;
+  color: white;
+  border-color: #004182;
+}
+
+.contact{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.contactall{
+  border-width:2px;
+  border-style:solid;
+  border-color: #e8e8e8;
+  padding: 2px;
+  border-radius: 15px 15px 15px 15px; 
+}
+
+.roundimg{
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+  margin: 5px;
+}
+
+.roundimg{
+  border-width:2px;
+  border-style:solid;
+  border-color: #e8e8e8;
+  border-radius: 50px;
+}
+
+.desctext h1{
+  font-size: 25px;
+  font-weight: 600;
+}
+
+.descbuttons{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.smallimg{
+  width: 15px;
+  height: 15px;
+  margin-right: 15px;
+}
+
+.textype1s{
+  font-size: 15px;
+  font-weight: 550;
+}
+
+.textype2s{
+  font-size: 15px;
+  font-weight: 350;
+}
+
+.textype3s{
+  font-size: 15px;
+  font-weight: 250;
+  color: #56687a;;
+}
+
+.where{
+  background-color: #daebd1;
 }
