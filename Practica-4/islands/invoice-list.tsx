@@ -7,7 +7,7 @@ type Invoice = {
   number: string;
   data: string;
   base: number;
-  totalAmmount: number;
+  total: number;
 };
 
 const InvoiceList = () => {
@@ -29,7 +29,7 @@ const InvoiceList = () => {
   return (
     <div style={{ width: "100%" }}>
       {loading.value && <div>Loading...</div>}
-      {invoices.value.length !== 0 && <div>No invoices</div>}
+      {invoices.value.length === 0 && <div class="textred">No invoices</div>}
       {invoices.value.length !== 0 && (
         <div width="100%">
           {invoices.value.map((invoice: Invoice) => (
@@ -64,7 +64,7 @@ const InvoiceList = () => {
                   }}
                 >
                   <p>Base: {invoice.base}</p>
-                  <p>Total: {invoice.totalAmmount}</p>
+                  <p>Total: {invoice.total}</p>
                 </div>
               </div>
               <div
@@ -82,7 +82,7 @@ const InvoiceList = () => {
                     await fetch(`/api/invoice?id=${invoice.id}`, {
                       method: "DELETE",
                     });
-                    fetchInvoices();
+                    await fetchInvoices();
                   }}
                 >
                   Delete

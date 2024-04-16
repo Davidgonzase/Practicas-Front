@@ -40,9 +40,9 @@ export const fetchInvoice = async (
 
 export const deleteInvoice = async (id: string): Promise<void> => {
   const invoices = await fetchInvoices();
-
-  const newInvoices = invoices.filter((invoice) => invoice.number === id);
-
+  console.log(id);
+  const newInvoices = invoices.filter((invoice) => invoice.id != Number(id));
+  console.log(newInvoices);
   await Deno.writeTextFile(
     "./data/invoice.json",
     JSON.stringify(newInvoices, null, 2),

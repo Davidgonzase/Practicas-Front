@@ -1,6 +1,9 @@
+import { useSignal } from "@preact/signals";
 import { useState } from "preact/hooks";
+import { exists } from "$std/fs/exists.ts";
 
 export default function CreateInvoice() {
+  const [error, setError] = useState<string>("");
   const [form, setForm] = useState<Invoice>({
     name: "",
     number: "",
@@ -10,6 +13,7 @@ export default function CreateInvoice() {
   });
   const [lines, setLines] = useState<InvoiceLine[]>([]);
   const [taxs, setTaxs] = useState<InvoiceTax[]>([]);
+  const clients = useSignal([]);
 
   const handleAddLine = () => {
     setLines([
@@ -25,7 +29,7 @@ export default function CreateInvoice() {
   };
 
   const handleRemoveLine = (id: number) => {
-    setLines(lines.filter((line) => line.id === id));
+    setLines(lines.filter((line) => line.id !== id));
   };
 
   const handleAddTax = () => {
@@ -41,26 +45,53 @@ export default function CreateInvoice() {
   };
 
   const handleRemoveTax = (id: string) => {
-    setTaxs(taxs.filter((tax) => tax.id === id));
+    setTaxs(taxs.filter((tax) => tax.id !== id));
   };
 
-  const handleSubmit = (e: any) => {
+  const handleSubmit = async (e: any) => {
     e.preventDefault();
+    let error = true;
+    let exist = true;
+    if (form.name == "" || form.data == "" || form.number == "") error = false;
+    lines.forEach((e: InvoiceLine) => {
+      if (
+        e.description == "" || e.price == "" || e.quantity == "" ||
+        e.total == ""
+      ) error = false;
+    });
 
-    try {
-      fetch("/api/invoice", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          ...form,
-          lines,
-          taxs,
-        }),
-      });
-    } catch (error) {
-      console.log(error.message);
+    taxs.forEach((e: InvoiceTax) => {
+      if (e.description == "" || e.rate == "" || e.total == "") error = false;
+    });
+    const response = await fetch("/api/client");
+    const data = await response.json();
+    clients.value = data;
+    clients.value.forEach((e: Client) => {
+      if (e.Name === form.name) {
+        exist = false;
+      }
+    });
+
+    if (!error || exist) {
+      if (exist) setError("No existe el usuario");
+      if (!error) setError("Algun campo falta");
+    } else {
+      setError("");
+      try {
+        fetch("/api/invoice", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            ...form,
+            lines,
+            taxs,
+          }),
+        });
+      } catch (error) {
+        console.log(error.message);
+      }
     }
   };
 
@@ -319,6 +350,7 @@ export default function CreateInvoice() {
       >
         Submit
       </button>
+      {error != "" && <text class="textred">{error}</text>}
     </form>
   );
 }
@@ -344,4 +376,13 @@ type InvoiceTax = {
   description: string;
   rate: string;
   total: string;
+};
+
+type Client = {
+  Name: string;
+  Email: string;
+  Address: string;
+  City: string;
+  Country: string;
+  Phone: string;
 };
