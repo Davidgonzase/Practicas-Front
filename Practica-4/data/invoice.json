@@ -1,24 +1,6 @@
 [
   {
     "name": "Luis",
-    "number": "12",
-    "data": "2024-04-10",
-    "base": 0,
-    "total": 0,
-    "lines": [
-      {
-        "id": 1,
-        "description": "da",
-        "quantity": "231",
-        "price": "122",
-        "total": ""
-      }
-    ],
-    "taxs": [],
-    "id": 3
-  },
-  {
-    "name": "Luis",
     "number": "123",
     "data": "2024-04-09",
     "base": 0,

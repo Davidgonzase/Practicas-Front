@@ -1,0 +1,202 @@
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+* {
+  margin: 0;
+}
+button {
+  color: inherit;
+}
+button, [role="button"] {
+  cursor: pointer;
+}
+code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace;
+  font-size: 1em;
+}
+img,
+svg {
+  display: block;
+}
+img,
+video {
+  max-width: 100%;
+  height: auto;
+}
+
+html {
+  line-height: 1.5;
+  -webkit-text-size-adjust: 100%;
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+.transition-colors {
+  transition-property: background-color, border-color, color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+.my-6 {
+  margin-bottom: 1.5rem;
+  margin-top: 1.5rem;
+}
+.text-4xl {
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+}
+.mx-2 {
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+}
+.my-4 {
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+}
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+.px-4 {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+.py-8 {
+  padding-bottom: 2rem;
+  padding-top: 2rem;
+}
+.bg-\[\#86efac\] {
+  background-color: #86efac;
+}
+.text-3xl {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+}
+.py-6 {
+  padding-bottom: 1.5rem;
+  padding-top: 1.5rem;
+}
+.px-2 {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+.py-1 {
+  padding-bottom: 0.25rem;
+  padding-top: 0.25rem;
+}
+.border-gray-500 {
+  border-color: #6b7280;
+}
+.bg-white {
+  background-color: #fff;
+}
+.flex {
+  display: flex;
+}
+.gap-8 {
+  grid-gap: 2rem;
+  gap: 2rem;
+}
+.font-bold {
+  font-weight: 700;
+}
+.max-w-screen-md {
+  max-width: 768px;
+}
+.flex-col {
+  flex-direction: column;
+}
+.items-center {
+  align-items: center;
+}
+.justify-center {
+  justify-content: center;
+}
+.border-2 {
+  border-width: 2px;
+}
+.rounded {
+  border-radius: 0.25rem;
+}
+.hover\:bg-gray-200:hover {
+  background-color: #e5e7eb;
+}
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+.mainpage{
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.newbutton{
+  width: 100vw;
+  display: flex;
+  height: 50px;
+  justify-content: flex-end;
+}
+
+button{
+  width: 150px;
+  border-style:solid;
+  border-radius: 15px;
+  color: black;
+  padding: 7px;
+  transition: 0.5s;
+  border-color: black;
+}
+
+button:hover{
+  color: #6b7280;
+  border-color: #6b7280;
+  transition: 0.5s;
+}
+
+.columns{
+  display: flex;
+  height: calc(100vh - 100px);
+  width: 100vw;
+}
+.column{
+  margin-left: 4vw;
+  border-style: solid;
+  border-radius: 15px;
+  border-color: black;
+  width: 20vw;
+  min-width: 300px !important;
+}
+
+
+.tupac{
+  transition: 2s;
+  position: absolute;
+  background-color: #6b7280;
+  opacity: 0.5;
+  width: 100vw;
+  height: 100vh;
+}
+
+.tupacmodal{
+  transition: 2s;
+  top: 25%;
+  left: 25%;
+  position: absolute;
+  width: 50vw;
+  height: 50vh;
+  background-color: white;
+  border: solid;
+  border-radius: 5px;
+  border-color: black;
+
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center;
+  gap: 20%;
+}
