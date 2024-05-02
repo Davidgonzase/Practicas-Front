@@ -1,0 +1,131 @@
+.mainpage{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+  
+  .newbutton{
+    width: 100vw;
+    display: flex;
+    height: 50px;
+    justify-content: flex-end;
+  }
+  
+  button{
+    width: 150px;
+    border-style:solid;
+    border-radius: 15px;
+    color: black;
+    padding: 7px;
+    transition: 0.5s;
+    border-color: black;
+  }
+  
+  button:hover{
+    color: #6b7280;
+    border-color: #6b7280;
+    transition: 0.5s;
+  }
+  
+  .columns{
+    display: flex;
+    height: calc(100vh - 100px);
+    width: 100vw;
+  }
+  
+  .column{
+    display: flex;
+    flex-direction: column;
+    margin-left: 4vw;
+  }
+  
+  .list{
+    border-style: solid;
+    border-radius: 15px;
+    border-color: black;
+    width: 20vw;
+    height: calc(100vh - 100px);
+    min-width: 300px !important;
+  }
+  
+  .inside{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    border-bottom: black;
+    border-top: black;
+    min-height: 100px;
+    border-bottom: solid black;
+    border-top: solid black;
+    border-radius: 10px;
+    transition:ease-out 0.5s;
+  }
+  
+  .inside:hover{
+    transition:ease-out 0.5s;
+    background-color: #d3d3d3ab;
+  }
+  
+  
+  .tupac{
+    position: absolute;
+    background-color: #6b7280;
+    opacity: 0.5;
+    width: 100vw;
+    height: 100vh;
+  }
+  
+  .tupacmodal{
+    top: 37%;
+    left: 37%;
+    position: absolute;
+    width: 25vw;
+    height: 25vh;
+    background-color: white;
+    border: solid;
+    border-radius: 5px;
+    border-color: black;
+    min-height: 200px;
+    min-width: 300px;
+  
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+    gap: 10%;
+  }
+  
+  .tupacmodal2{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    top: 0%;
+    left: 70%;
+    position: absolute;
+    width: 30vw;
+    height: 100vh;
+    background-color: white;
+    border: solid;
+    border-radius: 5px;
+    border-color: black;
+    min-width: 200px;
+    flex-wrap: nowrap;
+    align-items: center;
+    div{
+      margin-top: 20%;
+      margin-bottom: 20%;
+    }
+  }
+  
+  .red{
+    color:red;
+  }
+  
+  .list{
+    display: flex;
+    overflow: auto;
+    flex-direction: column;
+    min-height: 100px;
+  }

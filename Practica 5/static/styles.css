@@ -1,3 +1,4 @@
+@import url("task.css");
 
 *,
 *::before,
@@ -126,77 +127,4 @@ html {
 }
 .tabular-nums {
   font-variant-numeric: tabular-nums;
-}
-
-.mainpage{
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-}
-
-.newbutton{
-  width: 100vw;
-  display: flex;
-  height: 50px;
-  justify-content: flex-end;
-}
-
-button{
-  width: 150px;
-  border-style:solid;
-  border-radius: 15px;
-  color: black;
-  padding: 7px;
-  transition: 0.5s;
-  border-color: black;
-}
-
-button:hover{
-  color: #6b7280;
-  border-color: #6b7280;
-  transition: 0.5s;
-}
-
-.columns{
-  display: flex;
-  height: calc(100vh - 100px);
-  width: 100vw;
-}
-.column{
-  margin-left: 4vw;
-  border-style: solid;
-  border-radius: 15px;
-  border-color: black;
-  width: 20vw;
-  min-width: 300px !important;
-}
-
-
-.tupac{
-  transition: 2s;
-  position: absolute;
-  background-color: #6b7280;
-  opacity: 0.5;
-  width: 100vw;
-  height: 100vh;
-}
-
-.tupacmodal{
-  transition: 2s;
-  top: 25%;
-  left: 25%;
-  position: absolute;
-  width: 50vw;
-  height: 50vh;
-  background-color: white;
-  border: solid;
-  border-radius: 5px;
-  border-color: black;
-
-  display: flex;
-  flex-direction: column;
-  flex-wrap: nowrap;
-  align-items: center;
-  justify-content: center;
-  gap: 20%;
 }
